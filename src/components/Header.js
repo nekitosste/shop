@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import Order from "./order";
+import Placeorder from "./placeorder";
 
 const showOrders = (props) => {
   let summa = 0
@@ -11,8 +12,9 @@ const showOrders = (props) => {
       {props.orders.map(el => (
         <Order onDelete={props.onDelete} key={el.id} item={el} />
         ))}
-        <div>
+        <div className="d-flex mb-2">
         <p className="summa"> Сумма: {new Intl.NumberFormat().format(summa)}₽</p>
+        <Placeorder/>
         
         </div>
     </div>
@@ -36,11 +38,7 @@ export default function Header(props) {
     return (
         <header>
             <div>
-                <span className='logo'>Мастерская подарков</span>
-                <ul className='nav'>
-                    <li>Про нас</li>
-                    <li>Контакты</li>
-                </ul>
+          
                 
                 <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`}/>
 
@@ -52,8 +50,7 @@ export default function Header(props) {
                     </div>
                 )}
             </div>
-            <div className='presentation'>
-            </div>
+            
         </header>
     )
 }

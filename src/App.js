@@ -1,85 +1,47 @@
 
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
+
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Items from "./components/items";
+import NavbarMain  from "./components/NavbarMain";
+import StartPage from "./pages/StartPage";
+import AboutUs from "./pages/AboutUs";
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      orders: [],
-      items: [
-
-      {
-        id:1,
-        title: 'маленький ежик',
-        img: '1.jpg',
-        desc: 'Маленький красивый ежик',
-        price: '400'
-      },
-
-      {
-        id:2,
-        title: 'маленький пес',
-        img: '2.jpg',
-        desc: 'Маленький красивый пес',
-        price: '400'
-      },
-      {
-        id:3,
-        title: 'маленький лис',
-        img: '3.jpg',
-        desc: 'Маленький красивый лис',
-        price: '400'
-      },
-
-      {
-        id:4,
-        title: 'маленький ежик',
-        img: '1.jpg',
-        desc: 'Маленький красивый ежик',
-        price: '400'
-      },
-
-      {
-        id:5,
-        title: 'маленький пес',
-        img: '2.jpg',
-        desc: 'Маленький красивый пес',
-        price: '400'
-      },
-      {
-        id:6,
-        title: 'маленький лис',
-        img: '3.jpg',
-        desc: 'Маленький красивый лис',
-        price: '400'
-      },
-
-      ]
-    }
-
-    this.addToOrder = this.addToOrder.bind(this)
-    this.deleteOrder = this.deleteOrder.bind(this)
-
-  }
-
-
+  
   render() {
     return (
+    
       <div className="container wpapper mt-4">
-        < Header orders={this.state.orders} onDelete={this.deleteOrder}/>
-        <Items items={this.state.items} onAdd = {this.addToOrder} /> 
+          <Router>
+            
+          <NavbarMain />
 
+          <Routes>
+            <Route path="/" element={<StartPage />} />
+            <Route path="/about-us" element={<AboutUs />} />
+          </Routes>
+          
+          <Footer/>
+        
+          </Router>
 
-
-
-        < Footer/>
       </div>
 
     );
+  }
+  chooseCategory(category) {
+    if (category === 'All') {
+      this.setState({currentItems: this.state.items})
+      return
+    }
+    this.setState({
+    currentItems: this.state.items.filter(el => el.category === category)
+    })
   }
 
   deleteOrder(id) {
