@@ -5,9 +5,16 @@ export class items extends Component {
   render() {
     return (
       <main className='mt-5'>
-        {this.props.items.map(el => (
-               <Item key={el.id} item={el} onAdd = {this.props.onAdd}/>
-            ))}
+        <div className='container'>
+          <div className='row'>
+            
+              {this.props.items.map(el => (
+                <Item  key={el.id} item={el} onAdd = {this.props.onAdd}/>
+              ))}
+            
+          </div>
+        </div>
+      
       </main>
     )
   }

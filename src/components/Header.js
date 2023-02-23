@@ -1,7 +1,9 @@
 import React, {useState} from "react";
+import {NavLink} from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
 import Order from "./order";
 import Placeorder from "./placeorder";
+
 
 const showOrders = (props) => {
   let summa = 0
@@ -14,7 +16,9 @@ const showOrders = (props) => {
         ))}
         <div className="d-flex mb-2">
         <p className="summa"> Сумма: {new Intl.NumberFormat().format(summa)}₽</p>
-        <Placeorder/>
+        <NavLink className="Orderbtn" to="/ordering">
+          Оформить заказ 
+        </NavLink>
         
         </div>
     </div>

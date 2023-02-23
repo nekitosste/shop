@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 
-import Header from "./components/Header"
+
 import Footer from "./components/Footer"
 import NavbarMain  from "./components/NavbarMain";
 import StartPage from "./pages/StartPage";
 import AboutUs from "./pages/AboutUs";
+import Contacts from "./pages/Contacts";
+import Ordering from "./pages/Ordering";
 
 
 class App extends React.Component {
@@ -16,14 +18,16 @@ class App extends React.Component {
   render() {
     return (
     
-      <div className="container wpapper mt-4">
+      <div className="container wpapper mt-2">
           <Router>
             
           <NavbarMain />
 
           <Routes>
             <Route path="/" element={<StartPage />} />
-            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/ordering" element={<Ordering />} />
           </Routes>
           
           <Footer/>
