@@ -10,8 +10,8 @@ export class Ordering extends Component {
   render() {
     return (
       <>
-        <div className='container'>
-        <h2>ghbdtn</h2>
+        <div className='container mt-4'>
+        <h2>Страница оформления заказов</h2>
         </div>
       </>
       

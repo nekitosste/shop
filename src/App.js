@@ -28,6 +28,7 @@ class App extends React.Component {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/ordering" element={<Ordering />} />
+
           </Routes>
           
           <Footer/>

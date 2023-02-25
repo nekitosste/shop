@@ -7,16 +7,11 @@ export class Contacts extends Component {
     return (
       <>
     <div className='presentationItem'> </div>
+
     <div className="container mt-4">
       <div className="row">
         <div className="col-12">
-          <h5>Контакты для связи</h5>
-        </div>
-      </div>
-    </div>
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-12">
+          <h5 className='mb-3'>Контакты для связи</h5>
           <p>Телефон: <a  href='tel: +7 (913) 022-53-98 ;' > +7 (913) 022-53-98</a></p>
           <p>Почта: <a className='' href="mailto: makar-enko_k@mail.ru">makar-enko_k@mail.ru</a></p>
           <h5 className='mb-4'>Вы так же можете сделать заказ в этих группах в Telegram</h5>

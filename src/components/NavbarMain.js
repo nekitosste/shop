@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+
 function NavbarMain() {
   return (
     <Navbar bg="" expand="lg">
@@ -19,6 +20,7 @@ function NavbarMain() {
             <NavLink className='nav-link' to="/contacts">
              Контакты
             </NavLink>
+           
           </Nav>
        
       </Container>
