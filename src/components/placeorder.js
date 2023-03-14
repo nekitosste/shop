@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 function Placeorder() {
   const [show, setShow] = useState(false);
@@ -10,7 +10,10 @@ function Placeorder() {
 
   return (
     <>
-        <button onClick={handleShow} className="Orderbtn"> Оформить заказ </button>
+      <button onClick={handleShow} className="Orderbtn">
+        {" "}
+        Оформить заказ{" "}
+      </button>
 
       <Modal
         show={show}
@@ -21,9 +24,7 @@ function Placeorder() {
         <Modal.Header closeButton>
           <Modal.Title>Оформление заказа</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Информация о заказе
-        </Modal.Body>
+        <Modal.Body>Информация о заказе</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Закрыть

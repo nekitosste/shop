@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function MainImg() {
-  return (
-    <div className='presentation'> </div>
-  )
+  return <div className="presentation"> </div>;
 }
